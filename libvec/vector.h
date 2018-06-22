@@ -83,6 +83,22 @@ extern void vector_pushback(vector_t *vector,void *val);
  */
 extern void *vector_popback(vector_t *vector);
 
+/** Push value to the front
+ *
+ * @param vector	Vector holding the data
+ * @param val		Value being pushed
+ *
+ * @return	Position of the pushed value
+ */
+extern void *vector_pushfront(vector_t *vector,void *val);
+
+/** Pop value from the front
+ *
+ * @param vector	Vector being popped
+ * @param to		Pointer to store the popped value
+ */
+extern void vector_popfront(vector_t *vector,void *to);
+
 /** Replace the value at pos
  *
  * @param vector	Vector holding the data

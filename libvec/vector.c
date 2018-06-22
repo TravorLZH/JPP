@@ -53,6 +53,17 @@ void *vector_popback(vector_t *vector)
 	return ptr;
 }
 
+void *vector_pushfront(vector_t *vector,void *val)
+{
+	return vector_insert(vector,0,val);
+}
+
+void vector_popfront(vector_t *vector,void *to)
+{
+	memcpy(to,vector_front(vector),vector->n);
+	vector_delete(vector,0);
+}
+
 void *vector_set(vector_t *vector,size_t pos,void *val)
 {
 	void *ptr=vector_at(vector,pos);

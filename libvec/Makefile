@@ -2,7 +2,7 @@
 
 all:	libvec.a
 
-libvec.a:	vector.o hashset.o
+libvec.a:	vector.o
 	ar -rc $@ $^
 
 %.o:	%.c
@@ -14,6 +14,3 @@ clean:
 
 ### Dependencies
 vector.o:	vector.c vector.h
-
-hashset.o:	hashset.c hashset.h
-
