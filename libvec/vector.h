@@ -123,7 +123,7 @@ extern void vector_delete(vector_t *vector,size_t pos);
  *
  * @return	Index of found element, negative value if not found
  */
-extern size_t vector_find(vector_t *vector,const void *key,cmpfunc);
+extern size_t vector_find(vector_t *vector,const void *key,cmpfunc_t cmpfunc);
 
 /** @} */
 #endif

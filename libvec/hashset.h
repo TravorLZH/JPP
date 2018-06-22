@@ -17,7 +17,7 @@ typedef struct hashset {
 	cmpfunc_t cmpfunc;
 } hashset_t;
 
-extern void hashset_new(hashset_t *hs,size_t elem_sz
+extern void hashset_new(hashset_t *hs,size_t elem_sz);
 
 /** @} */
 #endif
