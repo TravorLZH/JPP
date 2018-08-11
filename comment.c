@@ -1,5 +1,6 @@
 #include <jpp.h>
 #include <stdbool.h>
+#include <string.h>
 
 bool keep_comments=false;
 
