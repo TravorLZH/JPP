@@ -1,6 +1,8 @@
 #include <jpp.h>
+#include <jpp_macro.h>
 #include <string.h>
 #include <stdbool.h>
+#include <malloc.h>
 #include <ctype.h>
 
 const char define_prefix[]="#define";
@@ -35,6 +37,7 @@ int init_defines(int *i,char **argv)
 	printf("You defined macro `%s'",macro_name);
 	if(macro_val!=NULL)
 		printf(" with value `%s\'",macro_val);
+	add_macro(macro_name,macro_val);
 	putchar('\n');
 	return 0;
 }

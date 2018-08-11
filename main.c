@@ -1,5 +1,6 @@
 #include <jpp.h>
 #include <jpp_utils.h>
+#include <jpp_macro.h>
 #include <vector.h>
 #include <stdio.h>
 #include <string.h>
@@ -93,6 +94,7 @@ int main(int argc,char **argv)
 		output=stdout;
 	}
 	vector_t *lines=read_input(input);
+	init_macro();
 	process_all(lines);
 	write_output(output,lines);
 	if(out){
