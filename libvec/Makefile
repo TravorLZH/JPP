@@ -1,16 +1,18 @@
-# This Makefile is created for MinGW Make
+CC=gcc
+RM=rm
+AR=ar
 
 all:	libvec.a
 
 libvec.a:	vector.o
-	ar -rc $@ $^
+	$(AR) -rc $@ $^
 
 %.o:	%.c
-	gcc -c $< -o $@
+	$(CC) -c $< -o $@
 
 clean:
-	del /f *.a
-	del /f *.o
+	$(RM) -f *.a
+	$(RM) -f *.o
 
 ### Dependencies
 vector.o:	vector.c vector.h

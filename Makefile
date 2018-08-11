@@ -1,27 +1,28 @@
-# This Makefile is used by MinGW Make in Windows, UNIX Makefiles haven't been
-# created yet.
-
-SHELL=cmd.exe
 CC=gcc
+RM=rm
+INSTALL=install
+DEST=/usr/local
 LDFLAGS+=libvec/libvec.a
 CPPFLAGS+=-I. -Ilibvec
 C_SOURCES=$(wildcard *.c)
 OBJ=$(C_SOURCES:.c=.o)
 
-.PHONY:	all libvec/libvec.a clean clean-subdirs html
+.PHONY:	all libvec/libvec.a install clean clean-subdirs html
 
-all:	jpp.exe
+all:	jpp
 
 libvec/libvec.a:
 	$(MAKE) -C libvec libvec.a
 
-# JPP - Java PreProcessor
-jpp.exe:	libvec/libvec.a $(OBJ)
+jpp:	libvec/libvec.a $(OBJ)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
+install:
+	$(INSTALL) jpp $(DEST)/bin
+
 clean:	clean-subdirs
-	del /f *.o
-	del /f *.exe
+	$(RM) -f *.o
+	$(RM) -f *.exe
 
 clean-subdirs:
 	$(MAKE) -C libvec clean
@@ -32,4 +33,4 @@ html:
 
 # Test the preprocessor
 test:
-	test.bat
+	sh test.sh
