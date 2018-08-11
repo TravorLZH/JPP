@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <vector.h>
+#include <stdlib.h>
 
 #include <jpp_aux.h>
 
